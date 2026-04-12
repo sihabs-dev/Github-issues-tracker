@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github issues tracker</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- daisy ui + tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <!-- login form -->
+    <section class="max-w-[500px] sm:w-[600px] shadow-sm mt-3 p-8 mx-auto">
+      <div class="flex justify-center text-center">
+        <div>
+          <img
+            class="inline-block"
+            src="./assets/github-logo.png"
+            alt="github-logo"
+          />
+          <h1 class="text-2xl font-bold mt-3.5">GitHub Issues Tracker</h1>
+          <h1>Sign in to manage your issues</h1>
+        </div>
+      </div>
+
+      <div class="my-2.5">
+        <p class="text-xl font-medium mb-3">Username:</p>
+        <input
+          type="text"
+          name="usernsme"
+          id="username"
+          placeholder="Enter password"
+          class="w-full border-2 border-gray-200 p-2 rounded-md"
+        />
+        <p class="text-xl font-medium my-3">Password:</p>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter password"
+          class="w-full border-2 border-gray-200 p-2 rounded-md"
+        />
+        <button class="btn btn-primary w-full mt-8">Sign In</button>
+      </div>
+      <div class="flex justify-center items-center">
+        <div class="flex-grow border-t border-gray-300"></div>
+        <div class="mx-2 text-gray-600">OR</div>
+        <div class="flex-grow border-b border-gray-300"></div>
+      </div>
+      <h2 class="text-center text-gray-400 my-2">Demo Credentials:</h2>
+      <div class="bg-green-50 py-3.5 text-center rounded-xl ">
+        <p>Username: admin</p>
+        <p>Password: admin123</p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
