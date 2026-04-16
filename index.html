@@ -29,9 +29,9 @@
   </head>
   <body>
     <!-- login form -->
-    <!-- <section
+    <section
       id="login-form"
-      class=" max-w-[500px] sm:w-[600px] shadow-sm mt-3 p-8 mx-auto"
+      class="max-w-[500px] sm:w-[600px] shadow-sm mt-3 p-8 mx-auto"
     >
       <div class="flex justify-center text-center">
         <div>
@@ -76,126 +76,135 @@
         <p>Username: admin</p>
         <p>Password: admin123</p>
       </div>
-    </section> -->
+    </section>
     <!-- main page -->
-    <section id="main-page" class="">
-      <nav class="border-b border-gray-50 shadow-sm sticky top-0">
-        <div class="flex justify-between container mx-auto py-4">
-          <div class="nav-left flex items-center gap-3">
-            <img src="./assets/nav-logo.png" class="" alt="github-logo" />
-            <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
-          </div>
-          <div class="nav-right flex gap-4">
-            <label class="input">
-              <svg
-                class="h-[1em] opacity-50"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  stroke-linejoin="round"
-                  stroke-linecap="round"
-                  stroke-width="2.5"
-                  fill="none"
-                  stroke="currentColor"
+    <main id="main-page" class="hidden">
+      <section  class="">
+        <nav class="border-b border-gray-50 shadow-sm sticky top-0">
+          <div class="flex justify-between container mx-auto py-4">
+            <div class="nav-left flex items-center gap-3">
+              <img src="./assets/nav-logo.png" class="" alt="github-logo" />
+              <h1 class="text-2xl font-bold">GitHub Issues Tracker</h1>
+            </div>
+            <div class="nav-right flex gap-4">
+              <label class="input">
+                <svg
+                  class="h-[1em] opacity-50"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
                 >
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="m21 21-4.3-4.3"></path>
-                </g>
-              </svg>
-              <input id="input-field" type="search" required placeholder="Search" />
-            </label>
-            <button id="new-issue-btn" class="btn btn-primary">+ New Issue</button>
+                  <g
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="2.5"
+                    fill="none"
+                    stroke="currentColor"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </g>
+                </svg>
+                <input
+                  id="input-field"
+                  type="search"
+                  required
+                  placeholder="Search"
+                />
+              </label>
+              <button id="new-issue-btn" class="btn btn-primary">
+                + New Issue
+              </button>
+            </div>
           </div>
-        </div>
-      </nav>
-    </section>
-    <!-- btn  -->
-    <section class="my-7">
-      <div
-        class="p-5 w-9/12 mx-auto shadow-sm rounded-md border border-gray-100"
-      >
-        <button
-          id="all-btn"
-          onclick="showAllBtn()"
-          class="btn btn-primary common-class"
+        </nav>
+      </section>
+      <!-- btn  -->
+      <section class="my-7">
+        <div
+          class="p-5 w-9/12 mx-auto shadow-sm rounded-md border border-gray-100"
         >
-          All
-        </button>
-        <button
-          id="open-btn"
-          onclick="loadOpenBtnData()"
-          class="btn btn-outline mx-3 common-class"
-        >
-          Open
-        </button>
-        <button
-          id="closed-btn"
-          onclick="closeBtnData()"
-          class="btn btn-outline common-class"
-        >
-          Closed
-        </button>
-      </div>
-    </section>
-
-    <section class="w-9/12 mx-auto bg-gray-100">
-      <!-- card heading -->
-      <div
-        class="bg-white flex justify-between items-center p-3 mb-2 border-b border-gray-200 shadow-sm"
-      >
-        <div class="flex gap-2 items-center">
-          <img
-            class="max-w-[30px] h-[30px]"
-            src="./assets/Aperture.png"
-            alt=""
-          />
-          <div>
-            <h2 class="text-2xl font-bold">
-              <span id="card-counter">0</span> Issues
-            </h2>
-            <p class="text-gray-500">Track and manage your project issues</p>
-          </div>
-        </div>
-        <div class="flex gap-2">
-          <p class="mx-2">
-            <span
-              ><img
-                class="inline-block mx-1.5 align-baseline"
-                src="./assets/Ellipse 2.png"
-                alt=""
-            /></span>
+          <button
+            id="all-btn"
+            onclick="showAllBtn()"
+            class="btn btn-primary common-class"
+          >
+            All
+          </button>
+          <button
+            id="open-btn"
+            onclick="loadOpenBtnData()"
+            class="btn btn-outline mx-3 common-class"
+          >
             Open
-          </p>
-          <p>
-            <span
-              ><img
-                class="inline-block mx-1.5 align-baseline"
-                src="./assets/Ellipse 2 (1).png"
-                alt=""
-            /></span>
+          </button>
+          <button
+            id="closed-btn"
+            onclick="closeBtnData()"
+            class="btn btn-outline common-class"
+          >
             Closed
-          </p>
+          </button>
         </div>
-      </div>
+      </section>
 
-      <!-- card container -->
-      <div id="card-container" class="grid grid-cols-4 p-3 gap-3">
-        
-      </div>
-      <div id="loading-spiner" class="hidden col-span-full text-center py-7"><span class="loading loading-spinner loading-xl"></span></div>
-    </section>
-    <!-- modal -->
-    <dialog id="my_modal_1" class="modal">
-      <div class="modal-box">
-        <div id="modal-contant">modal contant</div>
-        <div class="modal-action">
-          <form method="dialog">
-            <button class="btn btn-primary">Close</button>
-          </form>
+      <section class="w-9/12 mx-auto bg-gray-100">
+        <!-- card heading -->
+        <div
+          class="bg-white flex justify-between items-center p-3 mb-2 border-b border-gray-200 shadow-sm"
+        >
+          <div class="flex gap-2 items-center">
+            <img
+              class="max-w-[30px] h-[30px]"
+              src="./assets/Aperture.png"
+              alt=""
+            />
+            <div>
+              <h2 class="text-2xl font-bold">
+                <span id="card-counter">0</span> Issues
+              </h2>
+              <p class="text-gray-500">Track and manage your project issues</p>
+            </div>
+          </div>
+          <div class="flex gap-2">
+            <p class="mx-2">
+              <span
+                ><img
+                  class="inline-block mx-1.5 align-baseline"
+                  src="./assets/Ellipse 2.png"
+                  alt=""
+              /></span>
+              Open
+            </p>
+            <p>
+              <span
+                ><img
+                  class="inline-block mx-1.5 align-baseline"
+                  src="./assets/Ellipse 2 (1).png"
+                  alt=""
+              /></span>
+              Closed
+            </p>
+          </div>
         </div>
-      </div>
-    </dialog>
+
+        <!-- card container -->
+        <div id="card-container" class="grid grid-cols-4 p-3 gap-3"></div>
+        <div id="loading-spiner" class="hidden col-span-full text-center py-7">
+          <span class="loading loading-spinner loading-xl"></span>
+        </div>
+      </section>
+      <!-- modal -->
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box">
+          <div id="modal-contant">modal contant</div>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn btn-primary">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </main>
 
     <script src="script.js"></script>
   </body>

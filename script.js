@@ -1,20 +1,20 @@
-// document.getElementById("sign-in").addEventListener("click", () => {
-//   const userName = document.getElementById("username");
-//   const passWord = document.getElementById("password");
-//   const userNameValue = userName.value;
-//   const passWordValue = passWord.value;
-//   console.log(typeof passWordValue);
-//   if (userNameValue == "admin" && passWordValue == "admin123") {
-//     document.getElementById("login-form").classList.add("hidden");
-//     document.getElementById("main-page").classList.remove("hidden");
-//   } else {
-//     alert("please enter a correct 'username' and 'password'");
-//     document.getElementById("login-form").classList.remove("hidden");
-//     document.getElementById("main-page").classList.add("hidden");
-//     userName.value = "";
-//     passWord.value = "";
-//   }
-// });
+document.getElementById("sign-in").addEventListener("click", () => {
+  const userName = document.getElementById("username");
+  const passWord = document.getElementById("password");
+  const userNameValue = userName.value;
+  const passWordValue = passWord.value;
+  console.log(typeof passWordValue);
+  if (userNameValue == "admin" && passWordValue == "admin123") {
+    document.getElementById("login-form").classList.add("hidden");
+    document.getElementById("main-page").classList.remove("hidden");
+  } else {
+    alert("please enter a correct 'username' and 'password'");
+    document.getElementById("login-form").classList.remove("hidden");
+    document.getElementById("main-page").classList.add("hidden");
+    userName.value = "";
+    passWord.value = "";
+  }
+});
 const loadAllCardData = () => {
   mannageSpinner(true);
   fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
