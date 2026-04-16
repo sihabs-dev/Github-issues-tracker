@@ -115,9 +115,27 @@
       <div
         class="p-5 w-9/12 mx-auto shadow-sm rounded-md border border-gray-100"
       >
-        <button class="btn btn-primary">All</button>
-        <button class="btn mx-3">Open</button>
-        <button class="btn">Closed</button>
+        <button
+          id="all-btn"
+          onclick="showAllBtn()"
+          class="btn btn-primary common-class"
+        >
+          All
+        </button>
+        <button
+          id="open-btn"
+          onclick="loadOpenBtnData()"
+          class="btn btn-outline mx-3 common-class"
+        >
+          Open
+        </button>
+        <button
+          id="closed-btn"
+          onclick="closeBtnData()"
+          class="btn btn-outline common-class"
+        >
+          Closed
+        </button>
       </div>
     </section>
 
@@ -133,15 +151,17 @@
             alt=""
           />
           <div>
-            <h2 class="text-2xl font-bold">50 Issues</h2>
+            <h2 class="text-2xl font-bold">
+              <span id="card-counter">0</span> Issues
+            </h2>
             <p class="text-gray-500">Track and manage your project issues</p>
           </div>
         </div>
         <div class="flex gap-2">
-          <p>
+          <p class="mx-2">
             <span
               ><img
-                class="inline-block mx-1.5"
+                class="inline-block mx-1.5 align-baseline"
                 src="./assets/Ellipse 2.png"
                 alt=""
             /></span>
@@ -150,7 +170,7 @@
           <p>
             <span
               ><img
-                class="inline-block mx-1.5"
+                class="inline-block mx-1.5 align-baseline"
                 src="./assets/Ellipse 2 (1).png"
                 alt=""
             /></span>
@@ -158,27 +178,24 @@
           </p>
         </div>
       </div>
+
       <!-- card container -->
       <div id="card-container" class="grid grid-cols-4 p-3 gap-3">
-        <div class="bg-white rounded-md shadow-md">
-          <div class="flex justify-between my-3 px-2.5">
-            <div><img src="./assets/Open-Status.png" alt="" /></div>
-            <div class="badge badge-soft badge-warning">High</div>
-          </div>
-          <p class="text-gray-400 line-clamp-2 px-2.5">
-            The navigation menu doesn't collapse properly on mobile devices...
-          </p>
-          <div class="border-b border-gray-200 p-2.5">
-            <div class="badge badge-outline badge-secondary">BUG</div>
-            <div class="badge badge-outline badge-warning">HELP WANTED</div>
-          </div>
-          <div class="text-gray-400 my-2.5 px-2.5">
-            <p>#1 by john_doe</p>
-            <p>1/15/2024</p>
-          </div>
+        
+      </div>
+      <div id="loading-spiner" class="hidden col-span-full text-center py-7"><span class="loading loading-spinner loading-xl"></span></div>
+    </section>
+    <!-- modal -->
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <div id="modal-contant">modal contant</div>
+        <div class="modal-action">
+          <form method="dialog">
+            <button class="btn btn-primary">Close</button>
+          </form>
         </div>
       </div>
-    </section>
+    </dialog>
 
     <script src="script.js"></script>
   </body>
