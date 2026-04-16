@@ -42,14 +42,14 @@ const manageActiveBtn = () => {
     btn.classList.add("btn-outline");
   }
 };
-function manageBadge(arr) {
+const manageBadge = (arr) => {
   if (!arr) return;
   const newArr = arr.map(
     (label) =>
       `<span class="badge badge-outline badge-success">${label}</span>`,
   );
   return newArr.join(" ");
-}
+};
 const showModal = (id) => {
   const getModal = document.getElementById("my_modal_1");
   getModal.showModal();
@@ -84,7 +84,7 @@ const displayAllCard = (items) => {
         "bg-white rounded-md shadow-md count hover:scale-101 hover:bg-green-50 hover:cursor-pointer border-t-4 border-green-400";
     } else {
       newDiv.className =
-        "bg-white rounded-md shadow-md count hover:scale-101 hover:bg-green-50 hover:cursor-pointer border-t-4 border-purple-400";
+        "bg-white rounded-md shadow-md count hover:scale-101 hover:bg-purple-50 hover:cursor-pointer border-t-4 border-purple-400";
     }
     newDiv.onclick = () => showModal(item.id);
     // newDiv.onclick = showModal;
@@ -158,5 +158,18 @@ const showAllBtn = () => {
   document.getElementById("all-btn").classList.add("btn-primary");
   loadAllCardData();
 };
+document.getElementById("new-issue-btn").addEventListener("click", () => {
+  const inputField = document.getElementById("input-field");
+  const inputValue = inputField.value;
+
+  fetch(
+    `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${inputValue}`,
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      manageActiveBtn();
+      displayAllCard(data.data);
+    });
+});
 
 loadAllCardData();
