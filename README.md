@@ -8,6 +8,7 @@ ans: The spread operator (...) is a powerful tool introduced in ES6 that allows 
 ans: The difference between map(), filter(), and forEach() are map() transforms each element create a new array. filter() select select specific items and create a shorter or empty new array. forEach() just run a function for each item.
 
 4. What is an arrow function?
-
+ans: An arrow function is a shorter, more modern way to write functions in JavaScript, introduced in ES6
 
 5. What are template literals?
+ans: Template literals are a modern way to handle strings in JavaScript, introduced in ES6. They use backticks (`) instead of standard single or double quotes.
